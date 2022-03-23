@@ -2,7 +2,7 @@ class GruppenTag extends React.Component {
   render = () => {
     return (
       <div>
-        // ToDo: füge hier Deinen HTML-Code ein
+Gruppen
       </div>
     )
   }
