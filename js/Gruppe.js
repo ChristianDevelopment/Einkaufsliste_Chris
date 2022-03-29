@@ -9,7 +9,7 @@ class Gruppe {
   }
 
   artikelFinden(suchName, meldungAusgeben) {
-    let gefundeneArtikel = this.artikelListe.filter(artikel => artikel.name == suchName)
+    let gefundeneArtikel = this.artikelListe.filter(artikel => artikel.name === suchName)
     if (gefundeneArtikel.length > 0) {
       return gefundeneArtikel[0]
     }
@@ -21,7 +21,7 @@ class Gruppe {
 
   artikelAuflisten(gekauft) {
     this.artikelListe.map(artikel => {
-      if (artikel.gekauft == gekauft) {
+      if (artikel.gekauft === gekauft) {
         console.debug(`  ${artikel.name}`)
       }
     })

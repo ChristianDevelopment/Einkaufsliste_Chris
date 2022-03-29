@@ -5,7 +5,7 @@ class App {
   static meldungenAusgeben = true
 
   static gruppeFinden(gruppenId) {
-    const gefundeneGruppen = this.gruppenListe.filter((gruppe) => gruppe.id == gruppenId)
+    const gefundeneGruppen = this.gruppenListe.filter((gruppe) => gruppe.id === gruppenId)
     if (gefundeneGruppen.length > 0) {
       return gefundeneGruppen[0]
     } else {
@@ -15,9 +15,9 @@ class App {
   }
 
   static gruppeHinzufuegen(name) {
-    const gleicheGruppen = this.gruppenListe.filter(gruppe => gruppe.name == name)
+    const gleicheGruppen = this.gruppenListe.filter(gruppe => gruppe.name === name)
     // keine Gruppe mit diesem Namen vorhanden
-    if (gleicheGruppen.length == 0) {
+    if (gleicheGruppen.length === 0) {
       let neueGruppe = new Gruppe(name, this.gruppenListe.length)
       this.gruppenListe.push(neueGruppe)
       App.informieren(`[App] Gruppe "${neueGruppe.name}" hinzugefügt`)

@@ -1,68 +1,88 @@
 class ShoppingTag extends React.Component {
-    render = () => {
-        return (
-            <div>
-                
-                <header>
-                    <h1>Einkaufsliste</h1>
-                    <nav>
-                        <input type="text" placeholder="Artikel hinzufügen"></input>
-                            <button className="material-icons" >add_circle</button>
-                    </nav>
-                </header>
-                <hr/>
 
-                    <main>
-                        <section>
-                            <h2>Einkaufen
-                                <i className="material-icons">expand_less</i>
-                            </h2>
-                            <dl>
-                                <dt>Obst & Gemüse
-                                    <i className="material-icons">expand_less</i>
-                                </dt>
-                                <dd><label><input type="checkbox"></input> Brokkoli</label></dd>
-                                <dt>Getreideprodukte
-                                    <i className="material-icons">expand_less</i>
-                                </dt>
-                                <dd><label><input type="checkbox"></input>Reis</label></dd>
-                                <dt>Milchprodukte
-                                    <i className="material-icons">expand_less</i>
-                                </dt>
-                                <dd><label><input type="checkbox"></input> Streukäse</label></dd>
-                            </dl>
-                        </section>
-                        <hr/>
-                            <section>
-                                <h2>Erledigt
-                                    <i className="material-icons">expand_less</i>
-                                </h2>
-                                <dl>
-                                    <dt>Hülsenfrüchte
-                                        <i className="material-icons">expand_less</i>
-                                    </dt>
-                                    <dd><label><input type="checkbox"></input><s>Tofu</s></label></dd>
-                                </dl>
-                            </section>
-                    </main>
-                    <hr/>
+  constructor() {
+      super();
 
-                        <footer>
-                            <nav>
-                                <button>
-                                    <span className="material-icons">bookmark_add</span> Gruppen
-                                </button>
-                                <button>
-                                    <span className="material-icons">sort</span> Sortieren
-                                </button>
-                                <button>
-                                    <span className="material-icons">settings</span> Einstellungen
-                                </button>
-                            </nav>
-                        </footer>
+      this.state = {
+          aktiveGruppe: null,
+      }
 
-             
-            </div>
+      let gruppe1 = App.gruppeHinzufuegen("Obst & Gemüse")
+      gruppe1.artikelHinzufuegen("Brokkoli")
+      let gruppe2 = App.gruppeHinzufuegen("Getreideprodukte")
+      gruppe2.artikelHinzufuegen("Reis")
+      let gruppe3 = App.gruppeHinzufuegen("Milchprodukte")
+      gruppe3.artikelHinzufuegen("Streukäse")
+      let gruppe4 = App.gruppeHinzufuegen("Getränke")
+      gruppe4.artikelHinzufuegen("Wasser")
+      let gekaufterArtikel = gruppe3.artikelHinzufuegen("Milch")
+      gekaufterArtikel.gekauft = true
+
+  }
+
+  setAktiveGruppe=(gruppenID) =>{
+      App.aktiveGruppe=gruppenID
+      this.setState({
+          aktiveGruppe:App.aktiveGruppe})
+      console.debug(this.state.aktiveGruppe)
+  }
+
+
+
+  render = () => {
+    return (
+      <div>
+        <header>
+          <h1>Einkaufsliste</h1>
+          <nav>
+            <input type="text" placeholder="Artikel hinzufügen"/>
+            <button className="material-icons">add_circle</button>
+          </nav>
+        </header>
+        <hr/>
+
+        <main>
+          <section>
+            <h2>Einkaufen
+              <i className="material-icons">expand_less</i>
+            </h2>
+            <dl>
+
+              {App.gruppenListe.map(gruppe => (
+                  <GruppenTag key={gruppe.id} gruppe={gruppe} erledigt={false}/>
+              ))}
+
+
+
+
+            </dl>
+          </section>
+          <hr/>
+          <section>
+            <h2>Erledigt
+              <i className="material-icons">expand_less</i>
+            </h2>
+            {App.gruppenListe.map(gruppe => (
+                <GruppenTag key={gruppe.id} gruppe={gruppe} erledigt={true}/>
+            ))}
+          </section>
+        </main>
+        <hr/>
+
+        <footer>
+          <nav>
+            <button>
+              <span className="material-icons">bookmark_add</span> Gruppen
+            </button>
+            <button>
+              <span className="material-icons">sort</span> Sortieren
+            </button>
+            <button>
+              <span className="material-icons">settings</span> Einstellungen
+            </button>
+          </nav>
+        </footer>
+      </div>
     )
-    }
-    }
+  }
+}
