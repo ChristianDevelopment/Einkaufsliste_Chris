@@ -6,6 +6,7 @@ class Gruppe {
     this.index = index
     this.name = name
     this.artikelListe = []
+    this.gruppenListe = []
   }
 
   artikelFinden(suchName, meldungAusgeben) {
@@ -27,6 +28,8 @@ class Gruppe {
     })
   }
 
+  /*artikel hinzufügen feld*/
+
   artikelHinzufuegen(name) {
     let vorhandenerArtikel = this.artikelFinden(name, false)
     if (!vorhandenerArtikel) {
@@ -39,18 +42,10 @@ class Gruppe {
     }
   }
 
+
   artikelObjektHinzufuegen(artikel) {
     let neuerArtikel = this.artikelHinzufuegen(artikel.name)
-    // kopiert alle Properties aus "artikel" nach "neuerArtikel"
     Object.assign(neuerArtikel, artikel)
-  }
-
-  artikelUmbenennen(alterName, neuerName) {
-    let artikel = this.artikelFinden(alterName, true)
-    if (artikel) {
-      artikel.name = neuerName
-      App.informieren(`[${this.name}] Artikel "${alterName}" umbenannt in "${neuerName}"`)
-    }
   }
 
   artikelEntfernen(name) {

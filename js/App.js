@@ -18,7 +18,6 @@ class App {
 
   static gruppeHinzufuegen(name) {
     const gleicheGruppen = this.gruppenListe.filter(gruppe => gruppe.name === name)
-    // keine Gruppe mit diesem Namen vorhanden
     if (gleicheGruppen.length === 0) {
       let neueGruppe = new Gruppe(name, this.gruppenListe.length)
       this.gruppenListe.push(neueGruppe)
@@ -27,15 +26,6 @@ class App {
       return neueGruppe
     } else {
       App.informieren(`[App] Gruppe "${name}" existiert schon!`, true)
-    }
-  }
-
-  static gruppeUmbenennen(gruppenId, neuerName) {
-    let gruppe = this.gruppeFinden(gruppenId)
-    if (gruppe) {
-      App.informieren(`[App] Gruppe "${gruppe.name}" umbenannt in "${neuerName}"`)
-      gruppe.name = neuerName
-
     }
   }
 
@@ -77,14 +67,6 @@ class App {
       })
     })
     this.aktiveGruppe = jsonDaten.aktiveGruppe
-  }
-
-  static stummschalten() {
-    this.meldungenAusgeben = false
-  }
-
-  static lautschalten() {
-    this.meldungenAusgeben = true
   }
 
   static speichern() {

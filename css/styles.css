@@ -1,46 +1,98 @@
 #root {
-    width: 20rem;
+    width: 100%;
+    max-width: 25rem;
     background-image: url("../img/Mamor.png");
     background-repeat: no-repeat;
-    background-position: center left;
+    background-position: top left;
     background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
 }
+
 #container {
     opacity: 85%;
 }
+
 :root {
-    --mdc-theme-primary: #48f306;
+    --mdc-theme-primary: #48f306bf;
     --mdc-theme-secondary: #827717;
 }
-dt {
-    background-color: rgb(124, 179, 66);
-    color: var(--mdc-theme-on-primary);
-}
-h2, dd {
-    background-color: var(--mdc-theme-on-primary);
+
+body {
+    margin: 0;
+
 }
 
-.aktiv { background-color: rgba(56, 190, 3, 0.75);color: #000000 }
-.inaktiv { background-color: rgba(239, 178, 187, 0.75);color: #000000 }
+dt {
+    background-color: #7CB342FF;
+    color: var(--mdc-theme-on-primary);
+}
+
+h1 {
+    color: #000000ff;
+    font-family: "Kashima Brush Demo", serif;
+    font-size: xxx-large;
+    text-shadow: 2px 2px #ffffff8c, 0 0 0.2em #ff0026bf
+
+}
+
+h2 {
+    font-family: "Tangerine", serif;
+    font-size: 40px;
+    background-color: var(--mdc-theme-on-primary);
+    text-shadow: 2px 2px #d7d5d5
+}
+
+dd {
+    font-family: "Rancho", serif;
+    font-size: 22px;
+
+}
+
+button {
+    font-family: "Rancho", serif;
+    font-size: 22px;
+
+}
+
+.aktiv {
+    background-color: #38be03bf;
+    color: #000000
+}
+
+.inaktiv {
+    background-color: #EFB2BB7F;
+    color: #000000
+}
+
 h1, h2, dl {
     margin: 0;
 }
+
 i.material-icons {
     cursor: pointer;
 }
+
 button.material-icons {
-    font-size: inherit;
     vertical-align: bottom
+
 }
+
 [type="checkbox"] {
     vertical-align: top;
     margin-right: 8px;
+    margin-top: 0.45rem;
 }
+
 dt {
+    font-family: "SendFlowers", serif;
+    font-size: 25px;
     display: flex;
     font-weight: 500;
     padding: 3px 5px;
+    text-shadow: 2px 2px 2px #ffffff;
 }
+
 dt span {
     width: 100%;
 }
@@ -49,28 +101,33 @@ dd {
     display: flex;
     margin-left: 0;
 }
+
 dd input[type="search"] {
     margin-left: 1.5rem;
 }
+
 label {
     width: 91%;
     cursor: pointer
 }
+
 footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: Center;
 }
 
 .mdc-dialog {
     opacity: 100%;
 }
+
 .mdc-dialog__surface {
     position: absolute;
     top: 10%;
     left: 25px;
 }
+
 .material-icons {
-    font-family: 'Material Icons';
+    font-family: 'Material Icons', serif;
     font-weight: normal;
     font-style: normal;
     font-size: 24px;
@@ -83,5 +140,42 @@ footer {
     direction: ltr;
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
+
 }
 
+.eye {
+    margin-left: 1rem;
+}
+
+.gruppePlus {
+    background-color: #38BE03BF;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.gruppeEingabe {
+    background-color: #bda3a366;
+    display: flex;
+    justify-content: left;
+}
+
+.eingabefeld {
+    background-color: #bda3a366;
+    display: flex;
+
+}
+
+.gruppeDelete {
+    background-color: #bda3a366;
+    padding-left: 70px;
+    padding-right: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.artikelPlus {
+    background-color: #38be03bf;
+
+}

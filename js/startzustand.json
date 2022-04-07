@@ -6,8 +6,18 @@
       "artikelListe": [
         {
           "name": "Brokkoli",
-          "gekauft": false,
+          "gekauft": true,
           "index": 0
+        },
+        {
+          "index": 1,
+          "name": "Karotten",
+          "gekauft": false
+        },
+        {
+          "index": 2,
+          "name": "Äpfel",
+          "gekauft": false
         }
       ]
     },
@@ -23,7 +33,7 @@
         {
           "index": 1,
           "name": "Brot",
-          "gekauft": false
+          "gekauft": true
         },
         {
           "index": 2,
@@ -39,6 +49,16 @@
         {
           "index": 0,
           "name": "Streukäse",
+          "gekauft": true
+        },
+        {
+          "index": 1,
+          "name": "Milch",
+          "gekauft": false
+        },
+        {
+          "index": 2,
+          "name": "Joghurt",
           "gekauft": false
         }
       ]
@@ -51,6 +71,16 @@
           "index": 0,
           "name": "Tofu",
           "gekauft": true
+        },
+        {
+          "index": 1,
+          "name": "Bohnen",
+          "gekauft": false
+        },
+        {
+          "index": 2,
+          "name": "Kichererbsen",
+          "gekauft": false
         }
       ]
     }
