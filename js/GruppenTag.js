@@ -65,7 +65,6 @@ class GruppenTag extends React.Component {
                />
             )) : ''}
 
-
        </div>
     )
   }
