@@ -7,6 +7,8 @@ class ShoppingTag extends React.Component {
   constructor() {
     super();
 
+    /* den State wird der Startzustand zugewiesen */
+
     this.state = {
       aktiveGruppe: null,
       setAktiveGruppe: App.setAktiveGruppe,
@@ -17,7 +19,8 @@ class ShoppingTag extends React.Component {
   }
 
   /**
-   * Speichert den Zustand im Local Storage und wird dann wieder Geladen
+   * lädt den Zustand, und wird durch eine Operation durch die Informieren Methode in der App Klasse gespeichert
+   *
    * @returns {Promise<void>}
    */
 
